@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -8,12 +9,11 @@ const notifier = require("node-notifier");
 const app = express();
 const TOKEN_EXPIRATION = 3600000; // Token expiration time in milliseconds (1 hour)
 
-
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended:true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://balavignesh2304:bala232323@balavignesh.secpmik.mongodb.net/?retryWrites=true&w=majority&appName=balavignesh', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -23,7 +23,7 @@ const db = mongoose.connection;
 db.on('error', () => console.log("Error in Connecting to Database"));
 db.once('open', () => console.log("Connected to Database"));
 
-const userSchema =  new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
@@ -31,16 +31,17 @@ const userSchema =  new mongoose.Schema({
     resetTokenExpiry: Date,
 });
 
+const User = mongoose.model('User', userSchema);
+
 // Signup route
 app.post("/sign_up", async (req, res) => {
     try {
         const { name, email, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
-        
+
         const user = new User({
             name,
             email,
-            
             password: hashedPassword
         });
 
@@ -76,24 +77,19 @@ app.post("/login", async (req, res) => {
                 message: 'Incorrect password',
                 sound: true, // Play a notification sound
             });
-           
+
             // return res.status(401).send("Invalid password");
+        } else {
+            // Here you might want to implement JWT authentication
+            return res.redirect('/mainpage.html');
         }
-        else{
-        // Here you might want to implement JWT authentication
-        return res.redirect('/mainpage.html');}
     } catch (err) {
         console.error(err);
         res.status(500).send("Error occurred while logging in");
     }
 });
 
-const User = mongoose.model('User', userSchema);
-
-// // Forget password route
-
-
-
+// Forget password route
 // Generate a random token of 10 characters
 function generateRandomToken() {
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -115,7 +111,7 @@ app.post("/request_password_reset", async (req, res) => {
             notifier.notify({
                 title: 'Mail Error',
                 message: 'User not found',
-                sound: true, 
+                sound: true,
             });
             // return res.status(404).send("User not found");
         }
@@ -131,37 +127,35 @@ app.post("/request_password_reset", async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'megtech2k4@gmail.com',
-                pass: 'aiuh rtmg ksft ffje',
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS,
             },
         });
 
         const mailOptions = {
-            from: 'megtech2k4@gmail.com',
+            from: process.env.GMAIL_USER,
             to: email,
             subject: 'Password Reset Request',
             text: `Use the following token to reset your password: ${resetToken}`,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
-      
-        if (error) {
-            notifier.notify({
-                title: 'Mail Error',
-                message: 'Failed to send email',
-                sound: true, 
-            });
-            console.error(error);
-            // return res.status(500).send("Failed to send email");
-        }
-        else{
-        notifier.notify({
-            title: 'Mail sent',
-            message: 'Password reset email sent successfully',
-            sound: true, 
+            if (error) {
+                notifier.notify({
+                    title: 'Mail Error',
+                    message: 'Failed to send email',
+                    sound: true,
+                });
+                console.error(error);
+                // return res.status(500).send("Failed to send email");
+            } else {
+                notifier.notify({
+                    title: 'Mail sent',
+                    message: 'Password reset email sent successfully',
+                    sound: true,
+                });
+            }
         });
-    }
-    });
     } catch (err) {
         console.error("Error in requesting password reset:", err);
         // return res.status(500).send("Error occurred while sending reset email");
@@ -180,9 +174,9 @@ app.post("/reset_password", async (req, res) => {
 
         if (!user) {
             notifier.notify({
-                title: 'password reset',
+                title: 'Password reset',
                 message: 'Invalid or expired token',
-                sound: true, 
+                sound: true,
             });
             // return res.status(404).send("Invalid or expired token");
         }
@@ -199,7 +193,7 @@ app.post("/reset_password", async (req, res) => {
             message: 'Password reset successfully',
             sound: true,
         });
-        // return res.send("Password reset successfully"); 
+        // return res.send("Password reset successfully");
     } catch (err) {
         console.error("Error in resetting password:", err);
 
@@ -212,8 +206,6 @@ app.post("/reset_password", async (req, res) => {
         // return res.status(500).send("Error occurred while resetting password");
     }
 });
-
-
 
 app.get("/", (req, res) => {
     res.set({
