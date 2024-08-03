@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+#background-video1{
+  display: none;
+}
+video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media(min-aspect-ratio: 16/9){
+video{
+      width: 100%;
+      height: auto;
+  }
+}
+@media only screen and (max-width: 1133px) {
+    
+  #background-video{
+    display: none;
+  
+  }
+  #background-video1{
+    display: block;
+  
+  }
+  
+}
+
+#sidemenu li{
+   
+    /* background: linear-gradient(to right, #e2e2e2, #fffcc9); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: #b3babe;
+    flex-direction: row;
+    font-size: 50px;
+
+}
+input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+button{
+    background-color:#d2a253;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+  
+
+.about{
+    margin-top: 0px;
+}
+
+  /* _ _ _ _ _ abou t_ _ _ _ _*/
+  
+/* CSS for slide effect */
+.mainabout {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.mainabout.show {
+  opacity: 5;
+  transform: translateX(0);
+}
+
+  .about{
+  margin-top: 20px; 
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+    justify-content: center;
+    align-items: center;
+    margin-left:  500px; 
+    margin-right:  500px; 
+    padding: 20px;
+    /* background: linear-gradient(to right, #ffffff, #4abff5); */
+     /* glass */
+     background: rgba(119, 119, 119, 0.2);
+     border-radius: 16px;
+     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.396);
+     backdrop-filter: blur(5px);
+     -webkit-backdrop-filter: blur(5px);
+     border: 1px solid rgba(255, 255, 255, 0.3);
+         /* end */
+    border-radius: 30px;
+    
+    /* glow */
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 1s ease;
+  
+  }
+  .about .section p ,h2 {
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+  
+  /* hover */
+#about:hover {
+  box-shadow: 0 0 10px #5d6970, 0 0 20px #d2a253 , 0 0 30px #d2a253 , 0 0 40px #d2a253 , 0 0 50px #d2a253,0 0 60px #d2a253;
+}
+
+@media screen and (max-width: 1245px) {
+    
+    
+   
+
+  #about {
+      margin-top: 100px;
+      
+      margin-left:  50px; 
+      margin-right:  50px;
+  }
+}
+@media screen and (max-width: 421px) {
+    img{
+      display: none;
+    }
+    
+   
+
+  #about {
+      margin-top: 100px;
+      
+      margin-left:  50px; 
+      margin-right:  50px;
+  }
+
+}
+.mainlogin2 {
+    opacity: 0;
+    transform: translateY(-23px);
+    transition: opacity 3s ease, transform 2s ease;
+}
+.logo1{
+    width: 140px; 
+}
+img{
+    border-radius: 90%;
+    margin-right: 30px;
+    margin-top: 20px;
+    
+}
+/* Show the element when the .show class is added */
+.mainlogin2.show {
+    opacity: 3;
+    transform: translateY(0);
+}

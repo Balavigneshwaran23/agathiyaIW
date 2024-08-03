@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 𝐀𝐆𝐀𝐓𝐇𝐈𝐘𝐀 𝐀𝐈</title>
+    <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="login.css">
+     <link rel="stylesheet" type="text/css" href="styles.css">
+     
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="x-icon" href="logo-color-fotor-2024040714636.png">
+</head>
+<link rel="stylesheet" href="lightanddrack.css">
+<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+<body>
+ 
+    
+    <div class="body1"> 
+        <video autoplay muted loop id="background-video">
+            <source src="1851190-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop id="background-video1">
+            <source src="5561380-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+    
+<div class="mainlogin2" id="mainlogin2">
+    <ul id="sidemenu"><li> <img src="logo-color-fotor-2024040714636.png" class="logo1" >𝐀𝐆𝐀𝐓𝐇𝐈𝐘𝐀 </li>
+    </div><!-- mainlogin2 -->
+      
+      
+    </ul>
+    <!-- loginpage -->
+    <div class="mainlogin" id="mainlogin">
+    <div class="body2" id="body3">
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form id="signupForm" class="form" action="/sign_up" method="POST">
+                    <h1>Create Account</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <!-- <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a> -->
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registeration</span>
+                    <input onclick="toggleZoom()"  type="text"  id="name"  name="name" placeholder="Name">
+                    <input type="email" id="email"  name="email" placeholder="Email">
+                    <input type="password" id="password"  name="password" placeholder="Password">
+                    <button type="submit" id="register1" onclick="toggleZoom()"  >Sign Up</button>
+                    <div class="two-col">
+                        <div class="two">
+                            <label><a href="policy.html">Privacy Policy</a></label>
+                        </div>
+                        <div class="two">
+                            <label><a href="terms.html">Terms & conditions</a></label>
+                        </div>
+                    </div><!-- two-col -->
+                </form>
+                
+            </div><!-- form-container sign-up -->
+            <div  class="form-container sign-in">
+                <form id="loginForm" class="form" action="/login" method="POST">
+                    <h1>Sign In</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <!-- <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a> -->
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email password</span>
+                    <input onclick="toggleZoom()"  type="email" id="loginEmail" name="email" placeholder="Email" required>
+                    <input  type="password" id="loginPassword" name="password" placeholder="Password">
+                    <a href="forgetpassword.html">Forget Your Password?</a>
+                    <!-- <button>Sign In</button> -->
+                    <button  type="submit" onclick="toggleZoom()"  >Sign In</button>
+                   
+                </form>
+            </div> <!-- form-container sign-in -->
+            
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of site features</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Register with your personal details to use all of site features</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+          </div>  <!-- toggle-container -->
+        </div><!-- container -->
+    
+       
+    </div><!--class body2 -->
+</div><!-- mainlogin -->
+<!-- miniscreen -->
+<div class="form-box23" id="form-box23">
+    <div class="login-container23" id="loginForm23" >
+        <form id="signinForm" class="form" action="/login" method="POST">
+        <div class="top23">
+            <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+            <header>Login</header>
+        </div>
+        <div class="input-box23">
+            <input  onclick="toggleZoom()" type="text" class="input-field23" id="email" name="email" placeholder=" Email">
+            <i class="bx bx-user"></i>
+        </div>
+        <div class="input-box23">
+            <input type="password" class="input-field23" id="password" name="password" placeholder="Password">
+            <i class="bx bx-lock-alt"></i>
+        </div>
+        <div class="input-box23">
+            <button class="submit23" onclick="toggleZoom()">Sign In</button>
+        </div>
+        <div class="two-col23">
+            <div class="one23">
+                <input type="checkbox" id="login-check23">
+                <label for="login-check"> Remember Me</label>
+            </div>
+            <div class="two23">
+                <label><a href="forgetpassword.html">Forgot password?</a></label>
+            </div>
+        </div>
+    </div>
+ </form>
+
+ <form id="signupForm" class="form" action="/sign_up" method="POST">
+    <div class="register-container23" id="registerForm23">
+        <div class="top23">
+            <span class="spanreg23">Have an account? <a href="#" onclick="login()">Login</a></span>
+            <header>Sign Up</header>
+        </div>
+        <div class="two-forms23">
+            <div class="input-box23">
+                <input onclick="toggleZoom()" type="text" class="input-field23" id="signupName23" name="name"  placeholder="Name">
+                <i class="bx bx-user"></i>
+            </div>
+        </div>
+        <div class="input-box23">
+            <input type="text" class="input-field23" id="email" name="email" placeholder="Email">
+            <i class="bx bx-envelope"></i>
+        </div>
+        <div class="input-box23">
+            <input type="password" class="input-field23" id="password"  name="password" placeholder="Password">
+            <i class="bx bx-lock-alt"></i>
+        </div>
+        <div class="input-box23">
+            <a href="#loginForm"></a><button class="submit23" onclick="toggleZoom()" > Sign Up</button></a>
+        </div>
+        <div class="two-col23">
+            <div class="two23">
+                <label><a href="policy.html">Privacy Policy</a></label>
+            </div>
+            <div class="two23">
+                <label><a href="terms.html">Terms & conditions</a></label>
+            </div>
+        </div>
+    </div>
+</div><!-- form-box -->
+</form>
+<!-- miniloginjs -->
+<script>
+    var x = document.getElementById("loginForm23");
+    var y = document.getElementById("registerForm23");
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+    }
+</script>
+
+<!-- ijs -->
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display="none";
+        })
+
+      
+
+// to hide the login in right side
+    const toggleButton = document.getElementById('register');
+    const glassPane = document.getElementById('loginForm');
+
+toggleButton.addEventListener('click', () => {
+    if (glassPane.style.display === 'none') {
+        
+    } else {
+        glassPane.style.display = 'none';
+    }
+ });
+// to show the login in left side
+ const toggleButton2 = document.getElementById('login');
+    const glassPane2= document.getElementById('loginForm');
+
+toggleButton2.addEventListener('click', () => {
+    if (glassPane2.style.display === 'flex') {
+        
+    } else {
+        glassPane2.style.display = 'flex';
+    }
+ });
+    </script>
+    <script>
+        function toggleZoom() {
+            var image = document.getElementById('zoomvideo');
+            image.classList.toggle('zoom-effect');
+        }
+    </script>
+        <script>
+            
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+        
+            
+            function showElementIfInViewport() {
+                const mainlogin = document.getElementById('mainlogin');
+                if (isElementInViewport(mainlogin)) {
+                    mainlogin.classList.add('show');
+                    
+                    window.removeEventListener('scroll', showElementIfInViewport);
+                }
+            }
+            function showElementOnLoad() {
+                const mainlogin = document.getElementById('mainlogin');
+                if (mainlogin) {
+                    
+                    mainlogin.classList.add('show');
+                }
+            }
+            window.addEventListener('scroll', showElementIfInViewport);
+            window.addEventListener('load', showElementOnLoad);
+        </script>
+     <script>
+       
+        window.onload = function() {
+            const mainlogin = document.getElementById('mainlogin2');
+            mainlogin.style.opacity = 1; 
+            mainlogin.style.transform = 'translateY(0)'; 
+        };
+    </script>
+    <!-- minilogin -->
+    <script>
+        
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+       
+        function showElementIfInViewport() {
+            const formBox = document.getElementById('form-box23');
+            if (formBox && isElementInViewport(formBox)) {
+                formBox.classList.add('show');
+                
+                window.removeEventListener('scroll', showElementIfInViewport);
+            }
+        }
+    
+       
+        function showElementOnLoad() {
+            const formBox = document.getElementById('form-box23');
+            if (formBox) {
+               
+                formBox.classList.add('show');
+            }
+        }
+    
+       
+        window.addEventListener('scroll', showElementIfInViewport);
+    
+      
+        window.addEventListener('load', showElementOnLoad);
+    </script>
+    
+    <script src="parallaxscroll.js"></script>
+    <script src="login.js"></script>
+ <!-- <script src="signin.js"></script> -->
+</div><!-- body1 -->
+ 
+</body>
+</html>
+

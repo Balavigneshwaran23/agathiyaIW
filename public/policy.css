@@ -1,0 +1,118 @@
+
+  video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+#background-video1{
+    display: none;
+  }
+@media(min-aspect-ratio: 16/9){
+    video{
+        width: 100%;
+        height: auto;
+    }
+    
+}
+@media only screen and (max-width: 1133px) {
+    
+    #background-video{
+      display: none;
+    
+    }
+    #background-video1{
+      display: block;
+    
+    }
+   
+
+  }
+
+  @media screen and (max-width: 1133px) {
+    .terms-box1 #title1{
+    display: block;  
+      color: #ffd694;
+      text-shadow: 0 0 10px #5d6970, 0 0 20px #d2a253 , 0 0 30px #d2a253 , 0 0 40px #d2a253 , 0 0 50px #d2a253; 
+    }
+    
+}
+  .terms-box1{
+    color: #b8b8b8;
+  }
+  #title1{
+    
+    font-size: 70px;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-bottom: 25px;
+    margin-left: 50px;
+    /* text glow */
+   
+    font-weight: bold; /* Adjust font weight if needed */
+    color: #bbbbbb;
+    text-shadow: 0 0 10px #000000, /* Adjust the color and size of the glow */
+                 0 0 20px #c2c2c2,
+                 0 0 30px #c2c2c2,
+                 0 0 40px #ffffff,
+                 0 0 50px #ffffff;
+  
+  }
+  .about{
+    margin-top: 20px; 
+      margin-bottom: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px; 
+      justify-content: center;
+      align-items: center;
+      margin-left:  50px; 
+      margin-right:  50px; 
+      padding: 20px;
+      /* background: linear-gradient(to right, #ffffff, #4abff5); */
+       /* glass */
+       background: rgba(119, 119, 119, 0.2);
+       border-radius: 16px;
+       box-shadow: 0 4px 30px rgba(255, 255, 255, 0.396);
+       backdrop-filter: blur(5px);
+       -webkit-backdrop-filter: blur(5px);
+       border: 1px solid rgba(255, 255, 255, 0.3);
+           /* end */
+      border-radius: 30px;
+      
+      /* glow */
+      cursor: pointer;
+      position: relative;
+      transition: box-shadow 1s ease;
+    
+    }
+    #about:hover {
+      box-shadow: 0 0 10px #5d6970, 0 0 20px #c3c3c3 , 0 0 30px #c3c3c3 , 0 0 40px #c3c3c3 , 0 0 50px #c3c3c3 ,0 0 60px #c3c3c3 ;
+    }
+  .buttons{
+    
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.btn{
+    height: 50px;
+    width: 500px;
+    border: 0;
+    
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: 50px;
+    color: #fff;
+    transition: .3s linear;
+    cursor: pointer;
+}
+.gold-btn{
+    background-color:#d2a253;
+}
+
+.btn:hover{
+    opacity: .6;
+}
