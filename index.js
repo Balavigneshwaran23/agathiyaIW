@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended:true }));
 
-mongoose.connect('mongodb+srv://balavignesh2304:bala232323@balavignesh.secpmik.mongodb.net/?retryWrites=true&w=majority&appName=balavignesh', {
+mongoose.connect('mongodb+srv://*******bala*****.secpmik.mongodb.net/?retryWrites=true&w=majority&appName=bala*********', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
